@@ -1,7 +1,7 @@
 @tool
 extends EditorPlugin
 
-var popup := preload("res://addons/gui_auto_layout/popup.gd").new()
+var popup := preload("res://addons/gui_auto_layout/popup.gd").new(self)
 var base := get_editor_interface().get_base_control()
 
 var last_selected_nodes := []
@@ -18,6 +18,60 @@ func _enter_tree():
 
 func _exit_tree():
 	popup.queue_free()
+
+
+func selected_replace_parent(type, new_name = "Control", params = null):
+	if last_selected_nodes.size() == 0: return
+	var old_parent : Control = last_selected_nodes[0].get_parent()
+	var new_parent : Control = type.new()
+	new_parent.position = old_parent.position
+	new_parent.size = old_parent.size
+
+	old_parent.replace_by(new_parent)
+	new_parent.name = new_name
+	old_parent.queue_free()
+
+	if type == Control:
+		new_parent.custom_minimum_size = enclosing_rect.size
+
+	if new_parent is HBoxContainer:
+		for x in last_selected_nodes:
+			x.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+
+	if new_parent is VBoxContainer:
+		for x in last_selected_nodes:
+			x.size_flags_vertical = Control.SIZE_EXPAND_FILL
+
+	if new_parent is GridContainer:
+		new_parent.columns = params[0]
+
+	for i in last_selected_nodes.size():
+		last_selected_nodes[i].position = last_selected_nodes_rects[i].position
+		last_selected_nodes[i].size = last_selected_nodes_rects[i].size
+
+
+func selected_dissolve_parent(replace_grandparent : bool):
+	var old_parent : Node = last_selected_nodes[0].get_parent()
+	var grand_parent : Node = old_parent.get_parent()
+	if grand_parent == null: return
+
+	for x in last_selected_nodes:
+		x.reparent(grand_parent)
+		x.owner = grand_parent.owner if grand_parent.owner != null else grand_parent
+
+	if replace_grandparent:
+		grand_parent.remove_child(old_parent)
+		grand_parent.replace_by(old_parent)
+		old_parent.position = grand_parent.position
+		old_parent.size = grand_parent.size
+		old_parent.custom_minimum_size = grand_parent.custom_minimum_size
+		if !old_parent is Container:
+			old_parent.custom_minimum_size = grand_parent.size
+
+		grand_parent.queue_free()
+
+	else:
+		old_parent.queue_free()
 
 
 func _shortcut_input(event):
@@ -50,7 +104,7 @@ func _open_auto_layout_popup():
 
 	if last_selected_nodes.size() == 0: return
 
-	var layouts := _get_layouts_for_nodes(last_selected_nodes_rects)
+	var layouts := _get_layouts_for_nodes(last_selected_nodes_rects, new_control.get_parent())
 	var popup_filling := {}
 	for x in layouts:
 		popup_filling[x[0]] = x[1]
@@ -59,19 +113,26 @@ func _open_auto_layout_popup():
 	popup.open(popup_filling, base.get_viewport().get_mouse_position() + Vector2(base.get_viewport().position))
 
 
-func _get_layouts_for_nodes(rects : Array) -> Array:
+func _get_layouts_for_nodes(rects : Array, parent : Node) -> Array:
 	var result := []
 	var aligned_h := _are_nodes_aligned_h(rects)
 	var aligned_v := _are_nodes_aligned_v(rects)
 	var grid_columns := 4  # TODO: properly calculate this
 
+	# Opposing BoxContainer
+	if parent is VBoxContainer:
+		result.append(["HBoxContainer", "Perpendicular Box", selected_replace_parent.bind(HBoxContainer, "Box")])
+
+	if parent is HBoxContainer:
+		result.append(["VBoxContainer", "Perpendicular Box", selected_replace_parent.bind(VBoxContainer, "Box")])
+
 	# Panel: if they are aligned on both axes -> overlap each other
 
 	if aligned_h && aligned_v:
 		result.append_array([
-			["MarginContainer", "Margins", _set_sel_parent.bind(MarginContainer, "Margins")],
-			["Panel", "Panel", _set_sel_parent.bind(PanelContainer, "Panel")],
-			["Control", "Freeform", _set_sel_parent.bind(Control, "Control")],
+			["MarginContainer", "Margins", selected_replace_parent.bind(MarginContainer, "Margins")],
+			["Panel", "Panel", selected_replace_parent.bind(PanelContainer, "Panel")],
+			["Control", "Freeform", selected_replace_parent.bind(Control, "Control")],
 		])
 		if rects.size() == 1:
 			return result
@@ -79,31 +140,31 @@ func _get_layouts_for_nodes(rects : Array) -> Array:
 	# Grid: if they are aligned on NEITHER axis
 
 	if !aligned_h && !aligned_v:
-		result.append(["GridContainer", "Grid", _set_sel_parent.bind(GridContainer, "Grid", [grid_columns])])
+		result.append(["GridContainer", "Grid", selected_replace_parent.bind(GridContainer, "Grid", [grid_columns])])
 
 	# Box/Split: if they are aligned on an axis
 
 	if aligned_h:
-		result.append(["HBoxContainer", "Box", _set_sel_parent.bind(HBoxContainer, "Box")])
+		result.append(["HBoxContainer", "Box", selected_replace_parent.bind(HBoxContainer, "Box")])
 		if rects.size() == 2:
-			result.append(["HSplitContainer", "Split", _set_sel_parent.bind(HSplitContainer, "Split")])
+			result.append(["HSplitContainer", "Split", selected_replace_parent.bind(HSplitContainer, "Split")])
 
 	if aligned_v:
-		result.append(["VBoxContainer", "Box", _set_sel_parent.bind(VBoxContainer, "Box")])
+		result.append(["VBoxContainer", "Box", selected_replace_parent.bind(VBoxContainer, "Box")])
 		if rects.size() == 2:
-			result.append(["VSplitContainer", "Split", _set_sel_parent.bind(VSplitContainer, "Split")])
+			result.append(["VSplitContainer", "Split", selected_replace_parent.bind(VSplitContainer, "Split")])
 
 	# Flow: if they are NOT aligned on an axis
 
 	if !aligned_h:
-		result.append(["VFlowContainer", "Flow", _set_sel_parent.bind(VFlowContainer, "Flow")])
+		result.append(["VFlowContainer", "Flow", selected_replace_parent.bind(VFlowContainer, "Flow")])
 
 	if !aligned_v:
-		result.append(["HFlowContainer", "Flow", _set_sel_parent.bind(HFlowContainer, "Flow")])
+		result.append(["HFlowContainer", "Flow", selected_replace_parent.bind(HFlowContainer, "Flow")])
 
 	# Freeform: "what in the world do I even put here???"
 
-	result.append(["Control", "Freeform", _set_sel_parent.bind(Control, "Control")])
+	result.append(["Control", "Freeform", selected_replace_parent.bind(Control, "Control")])
 
 	return result
 
@@ -140,36 +201,6 @@ func _are_nodes_aligned_v(rects : Array) -> bool:
 			max_b = x.position.x + x.size.x
 
 	return true
-
-
-func _set_sel_parent(type, new_name = "Control", params = null):
-	if last_selected_nodes.size() == 0: return
-	var old_parent : Control = last_selected_nodes[0].get_parent()
-	var new_parent : Control = type.new()
-	new_parent.position = old_parent.position
-	new_parent.size = old_parent.size
-
-	old_parent.replace_by(new_parent)
-	new_parent.name = new_name
-	old_parent.queue_free()
-
-	if type == Control:
-		new_parent.custom_minimum_size = enclosing_rect.size
-
-	if new_parent is HBoxContainer:
-		for x in last_selected_nodes:
-			x.size_flags_horizontal = Control.SIZE_EXPAND_FILL
-
-	if new_parent is VBoxContainer:
-		for x in last_selected_nodes:
-			x.size_flags_vertical = Control.SIZE_EXPAND_FILL
-
-	if new_parent is GridContainer:
-		new_parent.columns = params[0]
-
-	for i in last_selected_nodes.size():
-		last_selected_nodes[i].position = last_selected_nodes_rects[i].position
-		last_selected_nodes[i].size = last_selected_nodes_rects[i].size
 
 
 func _on_popup_item_selected(index : int):

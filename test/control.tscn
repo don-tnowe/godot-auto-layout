@@ -13,97 +13,17 @@ metadata/_edit_lock_ = true
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 offset_left = 272.0
-offset_top = 252.0
+offset_top = 313.317
 offset_right = 312.0
-offset_bottom = 292.0
+offset_bottom = 353.317
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 offset_left = 340.663
-offset_top = 251.683
+offset_top = 313.0
 offset_right = 380.663
-offset_bottom = 291.683
-
-[node name="ColorRect2" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 408.0
-offset_top = 252.0
-offset_right = 448.0
-offset_bottom = 292.0
-
-[node name="ColorRect11" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 272.0
-offset_top = 321.317
-offset_right = 312.0
-offset_bottom = 361.317
-
-[node name="ColorRect3" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 340.663
-offset_top = 321.0
-offset_right = 380.663
-offset_bottom = 361.0
-
-[node name="ColorRect4" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 408.0
-offset_top = 321.317
-offset_right = 448.0
-offset_bottom = 361.317
-
-[node name="ColorRect12" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 272.0
-offset_top = 390.317
-offset_right = 312.0
-offset_bottom = 430.317
-
-[node name="ColorRect5" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 340.663
-offset_top = 390.0
-offset_right = 380.663
-offset_bottom = 430.0
-
-[node name="ColorRect8" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 408.0
-offset_top = 390.317
-offset_right = 448.0
-offset_bottom = 430.317
-
-[node name="ColorRect19" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 272.0
-offset_top = 465.317
-offset_right = 312.0
-offset_bottom = 505.317
-
-[node name="ColorRect20" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 340.663
-offset_top = 465.0
-offset_right = 380.663
-offset_bottom = 505.0
-
-[node name="ColorRect21" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 408.0
-offset_top = 465.317
-offset_right = 448.0
-offset_bottom = 505.317
+offset_bottom = 353.0
 
 [node name="ColorRect25" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
@@ -121,362 +41,21 @@ offset_top = 538.0
 offset_right = 380.663
 offset_bottom = 578.0
 
-[node name="ColorRect39" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 408.0
-offset_top = 538.317
-offset_right = 448.0
-offset_bottom = 578.317
-
-[node name="ColorRect13" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 475.0
-offset_top = 252.317
-offset_right = 515.0
-offset_bottom = 292.317
-
-[node name="ColorRect7" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 611.0
-offset_top = 252.317
-offset_right = 651.0
-offset_bottom = 292.317
-
-[node name="ColorRect14" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 475.0
-offset_top = 321.634
-offset_right = 515.0
-offset_bottom = 361.634
-
-[node name="ColorRect15" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 611.0
-offset_top = 321.634
-offset_right = 651.0
-offset_bottom = 361.634
-
-[node name="ColorRect16" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 475.0
-offset_top = 390.634
-offset_right = 515.0
-offset_bottom = 430.634
-
-[node name="ColorRect18" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 611.0
-offset_top = 390.634
-offset_right = 651.0
-offset_bottom = 430.634
-
-[node name="ColorRect22" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 475.0
-offset_top = 465.634
-offset_right = 515.0
-offset_bottom = 505.634
-
-[node name="ColorRect24" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 611.0
-offset_top = 465.634
-offset_right = 651.0
-offset_bottom = 505.634
-
-[node name="ColorRect26" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 475.0
-offset_top = 538.634
-offset_right = 515.0
-offset_bottom = 578.634
-
-[node name="ColorRect40" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 543.663
-offset_top = 538.317
-offset_right = 583.663
-offset_bottom = 578.317
-size_flags_vertical = 3
-
-[node name="ColorRect23" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 543.663
-offset_top = 465.317
-offset_right = 583.663
-offset_bottom = 505.317
-size_flags_vertical = 3
-
-[node name="ColorRect17" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 543.663
-offset_top = 390.317
-offset_right = 583.663
-offset_bottom = 430.317
-size_flags_vertical = 3
-
-[node name="ColorRect9" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 543.663
-offset_top = 321.317
-offset_right = 583.663
-offset_bottom = 361.317
-size_flags_vertical = 3
-
-[node name="ColorRect6" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 543.663
-offset_top = 252.0
-offset_right = 583.663
-offset_bottom = 292.0
-size_flags_vertical = 3
-
-[node name="ColorRect41" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 611.0
-offset_top = 538.634
-offset_right = 651.0
-offset_bottom = 578.634
-
-[node name="ColorRect27" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 673.0
-offset_top = 252.317
-offset_right = 713.0
-offset_bottom = 292.317
-
-[node name="ColorRect28" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 741.663
-offset_top = 252.0
-offset_right = 781.663
-offset_bottom = 292.0
-
-[node name="ColorRect29" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 809.0
-offset_top = 252.317
-offset_right = 849.0
-offset_bottom = 292.317
-
-[node name="ColorRect30" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 673.0
-offset_top = 321.634
-offset_right = 713.0
-offset_bottom = 361.634
-
-[node name="ColorRect31" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 741.663
-offset_top = 321.317
-offset_right = 781.663
-offset_bottom = 361.317
-
-[node name="ColorRect32" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 809.0
-offset_top = 321.634
-offset_right = 849.0
-offset_bottom = 361.634
-
-[node name="ColorRect33" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 673.0
-offset_top = 390.634
-offset_right = 713.0
-offset_bottom = 430.634
-
-[node name="ColorRect34" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 741.663
-offset_top = 390.317
-offset_right = 781.663
-offset_bottom = 430.317
-
-[node name="ColorRect35" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 809.0
-offset_top = 390.634
-offset_right = 849.0
-offset_bottom = 430.634
-
-[node name="ColorRect36" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 673.0
-offset_top = 465.634
-offset_right = 713.0
-offset_bottom = 505.634
-
-[node name="ColorRect37" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 741.663
-offset_top = 465.317
-offset_right = 781.663
-offset_bottom = 505.317
-
-[node name="ColorRect42" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 809.0
-offset_top = 465.634
-offset_right = 849.0
-offset_bottom = 505.634
-
-[node name="ColorRect43" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 673.0
-offset_top = 538.634
-offset_right = 713.0
-offset_bottom = 578.634
-
-[node name="ColorRect44" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 741.663
-offset_top = 538.317
-offset_right = 781.663
-offset_bottom = 578.317
-
-[node name="ColorRect45" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 809.0
-offset_top = 538.634
-offset_right = 849.0
-offset_bottom = 578.634
-
-[node name="ColorRect46" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 871.0
-offset_top = 252.317
-offset_right = 911.0
-offset_bottom = 292.317
-
 [node name="ColorRect47" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 offset_left = 939.663
-offset_top = 252.0
+offset_top = 313.317
 offset_right = 979.663
-offset_bottom = 292.0
+offset_bottom = 353.317
 
 [node name="ColorRect48" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 offset_left = 1007.0
-offset_top = 252.317
+offset_top = 313.634
 offset_right = 1047.0
-offset_bottom = 292.317
-
-[node name="ColorRect49" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 871.0
-offset_top = 321.634
-offset_right = 911.0
-offset_bottom = 361.634
-
-[node name="ColorRect50" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 939.663
-offset_top = 321.317
-offset_right = 979.663
-offset_bottom = 361.317
-
-[node name="ColorRect51" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 1007.0
-offset_top = 321.634
-offset_right = 1047.0
-offset_bottom = 361.634
-
-[node name="ColorRect52" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 871.0
-offset_top = 390.634
-offset_right = 911.0
-offset_bottom = 430.634
-
-[node name="ColorRect53" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 939.663
-offset_top = 390.317
-offset_right = 979.663
-offset_bottom = 430.317
-
-[node name="ColorRect54" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 1007.0
-offset_top = 390.634
-offset_right = 1047.0
-offset_bottom = 430.634
-
-[node name="ColorRect55" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 871.0
-offset_top = 465.634
-offset_right = 911.0
-offset_bottom = 505.634
-
-[node name="ColorRect56" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 939.663
-offset_top = 465.317
-offset_right = 979.663
-offset_bottom = 505.317
-
-[node name="ColorRect57" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 1007.0
-offset_top = 465.634
-offset_right = 1047.0
-offset_bottom = 505.634
-
-[node name="ColorRect58" type="ColorRect" parent="."]
-custom_minimum_size = Vector2(32, 32)
-layout_mode = 2
-offset_left = 871.0
-offset_top = 538.634
-offset_right = 911.0
-offset_bottom = 578.634
+offset_bottom = 353.634
 
 [node name="ColorRect59" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(32, 32)
@@ -493,3 +72,435 @@ offset_left = 1007.0
 offset_top = 538.634
 offset_right = 1047.0
 offset_bottom = 578.634
+
+[node name="ColorRect36" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 272.0
+offset_top = 613.317
+offset_right = 312.0
+offset_bottom = 653.317
+
+[node name="ColorRect42" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 340.663
+offset_top = 613.0
+offset_right = 380.663
+offset_bottom = 653.0
+
+[node name="ColorRect83" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 939.663
+offset_top = 613.317
+offset_right = 979.663
+offset_bottom = 653.317
+
+[node name="ColorRect84" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 1007.0
+offset_top = 613.634
+offset_right = 1047.0
+offset_bottom = 653.634
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 400.663
+offset_top = 313.317
+offset_right = 440.663
+offset_bottom = 353.317
+
+[node name="ColorRect39" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 400.663
+offset_top = 538.317
+offset_right = 440.663
+offset_bottom = 578.317
+
+[node name="ColorRect55" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 400.663
+offset_top = 613.317
+offset_right = 440.663
+offset_bottom = 653.317
+
+[node name="ColorRect37" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 475.0
+offset_top = 613.634
+offset_right = 515.0
+offset_bottom = 653.634
+size_flags_vertical = 3
+
+[node name="ColorRect26" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 475.0
+offset_top = 538.634
+offset_right = 515.0
+offset_bottom = 578.634
+size_flags_vertical = 3
+
+[node name="ColorRect13" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 475.0
+offset_top = 313.634
+offset_right = 515.0
+offset_bottom = 353.634
+size_flags_vertical = 3
+
+[node name="ColorRect40" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 543.663
+offset_top = 538.317
+offset_right = 583.663
+offset_bottom = 578.317
+size_flags_vertical = 3
+
+[node name="ColorRect6" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 543.663
+offset_top = 313.317
+offset_right = 583.663
+offset_bottom = 353.317
+size_flags_vertical = 3
+
+[node name="ColorRect56" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 543.663
+offset_top = 613.317
+offset_right = 583.663
+offset_bottom = 653.317
+size_flags_vertical = 3
+
+[node name="Box" type="HBoxContainer" parent="."]
+custom_minimum_size = Vector2(775, 49)
+layout_mode = 2
+offset_left = 272.0
+offset_top = 459.0
+offset_right = 1047.0
+offset_bottom = 508.0
+
+[node name="ColorRect71" type="ColorRect" parent="Box"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect87" type="ColorRect" parent="Box"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect86" type="ColorRect" parent="Box"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect65" type="ColorRect" parent="Box"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Control" type="Control" parent="Box"]
+custom_minimum_size = Vector2(176, 49)
+layout_mode = 2
+
+[node name="ColorRect76" type="ColorRect" parent="Box/Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_right = 32.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect78" type="ColorRect" parent="Box/Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 36.0
+offset_right = 68.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect77" type="ColorRect" parent="Box/Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 72.0
+offset_right = 104.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect70" type="ColorRect" parent="Box/Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 108.0
+offset_right = 140.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect75" type="ColorRect" parent="Box/Control"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 144.0
+offset_right = 176.0
+offset_bottom = 49.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect74" type="ColorRect" parent="Box"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect73" type="ColorRect" parent="Box"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect72" type="ColorRect" parent="Box"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect64" type="ColorRect" parent="Box"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="ColorRect74" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 272.0
+offset_top = 386.317
+offset_right = 312.0
+offset_bottom = 426.317
+
+[node name="ColorRect77" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 340.663
+offset_top = 386.0
+offset_right = 380.663
+offset_bottom = 426.0
+
+[node name="ColorRect88" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 939.663
+offset_top = 386.317
+offset_right = 979.663
+offset_bottom = 426.317
+
+[node name="ColorRect89" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 1007.0
+offset_top = 386.634
+offset_right = 1047.0
+offset_bottom = 426.634
+
+[node name="ColorRect78" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 400.663
+offset_top = 386.317
+offset_right = 440.663
+offset_bottom = 426.317
+
+[node name="ColorRect79" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 475.0
+offset_top = 386.634
+offset_right = 515.0
+offset_bottom = 426.634
+size_flags_vertical = 3
+
+[node name="ColorRect80" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 543.663
+offset_top = 386.317
+offset_right = 583.663
+offset_bottom = 426.317
+size_flags_vertical = 3
+
+[node name="ColorRect90" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 871.0
+offset_top = 386.634
+offset_right = 911.0
+offset_bottom = 426.634
+
+[node name="ColorRect81" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 809.0
+offset_top = 386.634
+offset_right = 849.0
+offset_bottom = 426.634
+
+[node name="ColorRect91" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 741.663
+offset_top = 386.317
+offset_right = 781.663
+offset_bottom = 426.317
+
+[node name="ColorRect92" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 673.0
+offset_top = 386.634
+offset_right = 713.0
+offset_bottom = 426.634
+
+[node name="ColorRect93" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 611.0
+offset_top = 386.634
+offset_right = 651.0
+offset_bottom = 426.634
+
+[node name="ColorRect82" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 871.0
+offset_top = 613.634
+offset_right = 911.0
+offset_bottom = 653.634
+
+[node name="ColorRect69" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 809.0
+offset_top = 613.634
+offset_right = 849.0
+offset_bottom = 653.634
+
+[node name="ColorRect68" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 741.663
+offset_top = 613.317
+offset_right = 781.663
+offset_bottom = 653.317
+
+[node name="ColorRect67" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 673.0
+offset_top = 613.634
+offset_right = 713.0
+offset_bottom = 653.634
+
+[node name="ColorRect57" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 611.0
+offset_top = 613.634
+offset_right = 651.0
+offset_bottom = 653.634
+
+[node name="ColorRect58" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 871.0
+offset_top = 538.634
+offset_right = 911.0
+offset_bottom = 578.634
+
+[node name="ColorRect46" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 871.0
+offset_top = 313.634
+offset_right = 911.0
+offset_bottom = 353.634
+
+[node name="ColorRect45" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 809.0
+offset_top = 538.634
+offset_right = 849.0
+offset_bottom = 578.634
+
+[node name="ColorRect44" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 741.663
+offset_top = 538.317
+offset_right = 781.663
+offset_bottom = 578.317
+
+[node name="ColorRect43" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 673.0
+offset_top = 538.634
+offset_right = 713.0
+offset_bottom = 578.634
+
+[node name="ColorRect29" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 809.0
+offset_top = 313.634
+offset_right = 849.0
+offset_bottom = 353.634
+
+[node name="ColorRect28" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 741.663
+offset_top = 313.317
+offset_right = 781.663
+offset_bottom = 353.317
+
+[node name="ColorRect27" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 673.0
+offset_top = 313.634
+offset_right = 713.0
+offset_bottom = 353.634
+
+[node name="ColorRect41" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 611.0
+offset_top = 538.634
+offset_right = 651.0
+offset_bottom = 578.634
+
+[node name="ColorRect7" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+offset_left = 611.0
+offset_top = 313.634
+offset_right = 651.0
+offset_bottom = 353.634

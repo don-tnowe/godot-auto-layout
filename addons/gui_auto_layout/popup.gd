@@ -2,28 +2,40 @@
 extends PopupPanel
 
 signal item_selected(index : int)
+signal other_key(keycode : int)
 
 var button_box := HBoxContainer.new()
 var label := Label.new()
+var plugin : EditorPlugin
 
 var selected_option := 0
 
 
-func _init():
+func _init(p : EditorPlugin):
 	var root_box := HBoxContainer.new()
 	root_box.size = Vector2.ZERO
 	root_box.add_child(button_box)
 	root_box.add_child(label)
 	add_child(root_box)
 	root_box.resized.connect(func(): size = root_box.size)
+	plugin = p
 
 
 func _input(event):
 	if !visible: return
-	if event is InputEventKey:
-		if event.pressed && event.keycode == KEY_A:
-			var next_button := button_box.get_child((selected_option + 1) % button_box.get_child_count())
-			next_button.button_pressed = true
+	if event is InputEventKey && event.pressed:
+		match event.keycode:
+			KEY_A:
+				var next_button := button_box.get_child((selected_option + 1) % button_box.get_child_count())
+				next_button.button_pressed = true
+
+			KEY_R:
+				plugin.selected_dissolve_parent(true)
+				hide()
+
+			KEY_ESCAPE:
+				plugin.selected_dissolve_parent(false)
+				hide()
 
 
 func open(items : Dictionary, pos : Vector2):
