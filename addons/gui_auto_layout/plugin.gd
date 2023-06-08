@@ -180,7 +180,6 @@ func _get_layouts_for_nodes(rects : Array, enclosing : Rect2, parent : Node) -> 
 		result.append_array([
 			["MarginContainer", "Margins", selected_replace_parent.bind(MarginContainer, "Margins")],
 			["Panel", "Panel", selected_replace_parent.bind(PanelContainer, "Panel")],
-			["Control", "Freeform", selected_replace_parent.bind(Control, "Control")],
 		])
 		if rects.size() == 1:
 			return result
