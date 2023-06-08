@@ -93,8 +93,12 @@ func _open_auto_layout_popup():
 	new_control.owner = selected_nodes[0].owner
 	selected_nodes[0].replace_by(new_control)
 	new_control.add_child(selected_nodes[0])
+	var forbidden_parents := {}
 	for x in selected_nodes:
-		if x is Control:
+		forbidden_parents[x.get_parent()] = true
+
+	for x in selected_nodes:
+		if x is Control && !x in forbidden_parents:
 			last_selected_nodes.append(x)
 			last_selected_nodes_rects.append(Rect2(x.position - enclosing_rect.position, x.size))
 			x.reparent(new_control)
