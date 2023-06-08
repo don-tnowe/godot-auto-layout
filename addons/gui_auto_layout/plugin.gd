@@ -35,12 +35,10 @@ func selected_replace_parent(type, new_name = "Control", params = null):
 		new_parent.custom_minimum_size = enclosing_rect.size
 
 	if new_parent is HBoxContainer:
-		for x in last_selected_nodes:
-			x.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+		new_parent.alignment = BoxContainer.ALIGNMENT_CENTER
 
 	if new_parent is VBoxContainer:
-		for x in last_selected_nodes:
-			x.size_flags_vertical = Control.SIZE_EXPAND_FILL
+		new_parent.alignment = BoxContainer.ALIGNMENT_CENTER
 
 	if new_parent is GridContainer:
 		new_parent.columns = params[0]
@@ -104,7 +102,7 @@ func _open_auto_layout_popup():
 
 	if last_selected_nodes.size() == 0: return
 
-	var layouts := _get_layouts_for_nodes(last_selected_nodes_rects, new_control.get_parent())
+	var layouts := _get_layouts_for_nodes(last_selected_nodes_rects, enclosing_rect, new_control.get_parent())
 	var popup_filling := {}
 	for x in layouts:
 		popup_filling[x[0]] = x[1]
@@ -113,11 +111,11 @@ func _open_auto_layout_popup():
 	popup.open(popup_filling, base.get_viewport().get_mouse_position() + Vector2(base.get_viewport().position))
 
 
-func _get_layouts_for_nodes(rects : Array, parent : Node) -> Array:
+func _get_layouts_for_nodes(rects : Array, enclosing : Rect2, parent : Node) -> Array:
 	var result := []
 	var aligned_h := _are_nodes_aligned_h(rects)
 	var aligned_v := _are_nodes_aligned_v(rects)
-	var grid_columns := 4  # TODO: properly calculate this
+	var grid_columns := _get_nodes_columns(rects, enclosing)
 
 	# Opposing BoxContainer
 	if parent is VBoxContainer:
@@ -162,7 +160,7 @@ func _get_layouts_for_nodes(rects : Array, parent : Node) -> Array:
 	if !aligned_v:
 		result.append(["HFlowContainer", "Flow", selected_replace_parent.bind(HFlowContainer, "Flow")])
 
-	# Freeform: "what in the world do I even put here???"
+	# Freeform: always show
 
 	result.append(["Control", "Freeform", selected_replace_parent.bind(Control, "Control")])
 
@@ -201,6 +199,24 @@ func _are_nodes_aligned_v(rects : Array) -> bool:
 			max_b = x.position.x + x.size.x
 
 	return true
+
+
+func _get_nodes_columns(rects : Array, enclosing : Rect2) -> int:
+	var topmost : Rect2
+	var topmost_y := enclosing.end.y
+	for x in rects:
+		if x.position.y < topmost_y:
+			topmost_y = x.position.y
+			topmost = x
+
+	var min_b : float = topmost.position.y
+	var max_b : float = topmost.position.y + topmost.size.y
+	var top_row_count := 0
+	for x in rects:
+		if x.position.y <= max_b && x.position.y + x.size.y > min_b:
+			top_row_count += 1
+
+	return top_row_count
 
 
 func _on_popup_item_selected(index : int):
