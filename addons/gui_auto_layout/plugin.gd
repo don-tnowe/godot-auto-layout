@@ -2,6 +2,7 @@
 extends EditorPlugin
 
 var popup := preload("res://addons/gui_auto_layout/popup.gd").new(self)
+var delete_without_children_button := Button.new()
 var base := get_editor_interface().get_base_control()
 
 var last_selected_nodes := []
@@ -10,14 +11,59 @@ var last_selected_container : Control
 var enclosing_rect : Rect2
 var container_option_list := []
 
+var free_with_self := []
+
 
 func _enter_tree():
 	base.add_child(popup)
 	popup.item_selected.connect(_on_popup_item_selected)
 
+	var scene_dock := find_dock("Scene")
+	var delete_dialog_ok_button = scene_dock.get_child(11, true).get_child(2, true).get_child(2, true)
+	var delete_dialog_button_spacing := Control.new()
+	delete_dialog_button_spacing.size_flags_horizontal = Control.SIZE_EXPAND_FILL
+	delete_dialog_ok_button.add_sibling(delete_dialog_button_spacing)
+	delete_dialog_ok_button.add_sibling(delete_without_children_button)
+	delete_without_children_button.text = "OK + Keep children"
+	delete_without_children_button.pressed.connect(_on_delete_without_children_pressed)
+
+	free_with_self = [
+		popup,
+		delete_without_children_button,
+		delete_dialog_button_spacing,
+	]
+
+	# pack_root.owner = null
+	# children_set_owner(pack_root, pack_root, 40)
+	# var packed := PackedScene.new()
+	# packed.pack(pack_root)
+	# ResourceSaver.save(packed, "res://test/editor_pack.tscn")
+
 
 func _exit_tree():
-	popup.queue_free()
+	for x in free_with_self:
+		x.free()
+
+
+func children_set_owner(node : Node, new_owner : Node, depth : int = -1):
+	for x in node.get_children(true):
+		x.owner = new_owner
+		if depth != 0:
+			children_set_owner(x, new_owner, depth - 1)
+
+
+func find_dock(dock_name : NodePath) -> Control:
+	var dock_probe := Control.new()
+	var dock : Control
+	for i in DOCK_SLOT_MAX:
+		add_control_to_dock(i, dock_probe)
+		dock = dock_probe.get_parent().get_node_or_null(dock_name)
+		remove_control_from_docks(dock_probe)
+		if dock != null:
+			break
+
+	dock_probe.free()
+	return dock
 
 
 func selected_replace_parent(type, new_name = "Control", params = null):
@@ -225,3 +271,19 @@ func _get_nodes_columns(rects : Array, enclosing : Rect2) -> int:
 
 func _on_popup_item_selected(index : int):
 	container_option_list[index].call()
+
+
+func _on_delete_without_children_pressed():
+	delete_without_children_button.get_parent().get_parent().hide()
+	var selected := get_editor_interface().get_selection().get_selected_nodes()
+	for x in selected:
+		var pt := x.get_parent()
+		var i := x.get_index()
+		var children_reversed := x.get_children()
+		for y in children_reversed:
+			y.reparent(pt)
+			y.owner = pt.owner if pt.owner != null else pt
+			pt.move_child(y, i)
+			i += 1
+
+		x.queue_free()
